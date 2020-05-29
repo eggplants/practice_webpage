@@ -1,0 +1,129 @@
+@import url(sanitize.css);
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap");
+body {
+  background-color: #f0f0f0; /* glay */
+  padding: 10px;
+  font-size: 14px;
+  color: #666; /* thick glay */
+}
+.container {
+  max-width: 800px;
+  width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 影 */
+}
+header {
+  background-color: #422814; /* 茶色 */
+  padding: 10px;
+  color: #fff;
+}
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal; /* 太字抑制 */
+  text-align: center;
+}
+.description {
+  clear: left; /*回り込みの解除*/
+}
+.description img {
+  float: left;
+  margin: 0 10px 10px 0;
+  /*アニメーションつけるための変化のパラメータ(トランシジョン)*/
+  /*一気に書くなら: transition: opacity 1s ease 0s;*/
+  transition-property: opacity; /*透明度に変化をつける*/
+  transition-duration: 1s; /*完了までの時間*/
+  transition-timing-function: ease; /*トランシジョンの処理の種類*/
+  transition-delay: 0s; /*開始までの秒数*/
+}
+/*画像にマウス重ねた時のホバー(疑似クラス)*/
+.description img:hover{
+   opacity: 0.5; /*透明度*/
+}
+
+.information h1 {
+  /*アーティスト名*/
+  font-size: 18px;
+  margin: 0 10px 10px 0;
+  float: left;
+}
+.information .type {
+  /*アルバムやシングルの表示*/
+  display: inline; /*インライン*/
+  background-color: #e35a4d;
+  padding: 3px 5px;
+  font-size: 80%;
+  color: #fff;
+}
+.content {
+  background-color: #fff;
+  padding: 20px;
+}
+.songs {
+  margin: 0 0 20px;
+}
+.songs {
+  margin: 0 0 20px;
+}
+
+.songs h2 {
+  /*list headingの収録曲という表示*/
+  clear: left; /*descの回り込み解除*/
+  font-size: 100%;
+  font-weight: normal; /*フォントの太さ指定: 通常*/
+  margin: 0;
+  background-color: #e6e4dd;
+  padding: 5px 10px; /*上下 5/左右 10*/
+}
+.songs ol {
+  padding: 0;
+  margin: 0;
+  list-style: decimal inside; /*listのスタイルを算用数字*/
+}
+.songs li {
+  border-bottom: 1px solid #ccc;
+  width: 50%; /*画面の半分の幅*/
+  float: left; /*あふれたリストを左に*/
+  padding: 5px 10px;
+}
+a {
+  color: #666; /*リンク部分をグレーに*/
+  text-decoration: none;
+}
+/*
+floatで回り込みを使うと背景が切れる
+この問題は要素の高さが無くなったことによっておこる。
+なのでclearfixを使うと、適切にclearをしてくれてよい
+olにclearfixを持たす
+*/
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+header h1 {
+  font-family: "Chelsea Market", cursive;
+}
+footer {
+  text-align: center;
+  font-size: 80%;
+}
+/*レスポンシブWebデザイン(RWD)対応*/
+/*@media は特定の状況でのCSS適応を指定*/
+@media only screen and (max-width: 600px) {
+  .description img {
+    float: none; /*回り込み解除(clear)*/
+    display: block; /*表示をブロックで行う*/
+    margin: 0 auto; /*中央ぞろえ*/
+  }
+  header {
+    padding: 5px;
+  }
+  header h1 {
+    font-size: 12px;
+  }
+  .songs li {
+    float: none;
+    width: inherit;
+  }
+}
