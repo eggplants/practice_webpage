@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(26, 55, 229, 0.06); /*薄水色*/
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto; /*要素内の空白を0に*/
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); /* ドロップシャドウ */
+}
+img {
+  width: 100%;
+  margin: 0 auto;
+  vertical-align: top; /*container内画像と画像の間をくっつける*/
+}
+header {
+  background-color: #007acc;
+  color: #fff;
+  position: fixed; /*header要素を画面内追従(常にheaderがついてくるように)*/
+  top: 0; /*header位置は常に画面の最上部*/
+  width: 100%; /*幅は画面いっぱい*/
+  z-index: 100; /*他要素と重なったときには常に最前面の優先度*/
+}
+header h1 {
+  margin: 0;
+  font-size: 25px;
+  padding: 5px;
+  text-align: center;
+  font-family: "Open Sans Consended", sans-serif;
+}
+.photo {
+  position: relative; /*.inner要素が写真の下部に浮き上がるように(キャプションの追加がうまくいく)*/
+}
+.photo .inner {
+  position: absolute;
+  bottom: 0; /*画像最下部にくっつける*/
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /*キャプション背景を半透明黒に*/
+  font-size: 10px;
+  color: #fff;
+  margin: 0;
+}
+.inner p {
+  padding: 20px; /*説明文を上から20px開ける*/
+  font-size: 25px;
+}
+.inner span {
+  margin-left: 10px; /*ユーザ名との間隔をpから10px左に開ける*/
+}
+footer {
+  background-color: #007acc;
+  color: #fff;
+  bottom: 0; /*footer位置は常に画面の最下部*/
+  width: 100%; /*幅は画面いっぱい*/
+}
+footer h1 {
+  text-align: center;
+  font-size: 30px;
+}
